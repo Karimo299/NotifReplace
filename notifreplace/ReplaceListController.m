@@ -25,7 +25,7 @@ NSUserDefaults *prefs;
 		edit:nil];
 		[specifier setProperty:@"com.karimo299.notifreplace" forKey:@"defaults"];
 		[specifier setProperty:@"" forKey:@"default"];
-		[specifier setProperty:[NSString stringWithFormat:@"text"] forKey:@"key"];
+		[specifier setProperty:[NSString stringWithFormat:@"text%d", i] forKey:@"key"];
 		[specifier setProperty:@"com.karimo299.notifreplace/prefChanged" forKey:@"PostNotification"];
 		[_specifiers addObject:specifier];
 	}

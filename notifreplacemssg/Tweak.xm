@@ -16,7 +16,7 @@ static void loadPrefs() {
   mutableAttributedString = [arg1 mutableCopy];
   NSLog(@"%d", msgEnabled);
   if (msgEnabled) {
-    for (int i = 0; i < [[prefs valueForKey:@"inputs"] intValue]; i++) {
+    for (int i = 0; i < [[prefs valueForKey:@"inputs"] intValue] + 1; i++) {
       if ([[[prefs valueForKey:[NSString stringWithFormat:@"text%d", i]] componentsSeparatedByString:@", "] mutableCopy]) tmpArray= [[[prefs valueForKey:[NSString stringWithFormat:@"text%d", i]] componentsSeparatedByString:@", "] mutableCopy];
       if ([mutableAttributedString.mutableString containsString:[tmpArray[0] lowercaseString]]) [mutableAttributedString.mutableString setString:[mutableAttributedString.mutableString stringByReplacingOccurrencesOfString:[tmpArray[0] lowercaseString] withString:[tmpArray[1] lowercaseString]]];
       else if ([mutableAttributedString.mutableString containsString:[tmpArray[0] uppercaseString]]) [mutableAttributedString.mutableString setString:[mutableAttributedString.mutableString stringByReplacingOccurrencesOfString:[tmpArray[0] uppercaseString] withString:[tmpArray[1] uppercaseString]]];
@@ -25,10 +25,10 @@ static void loadPrefs() {
         NSRange range = [mutableAttributedString.mutableString rangeOfString:tmpArray[0] options:NSCaseInsensitiveSearch];
         if (range.location != NSNotFound) [mutableAttributedString replaceCharactersInRange:range withString:tmpArray[1]];
       }
-      NSLog(@"%@", tmpArray);
     }
     arg1 = mutableAttributedString;
   }
+  NSLog(@"%@", tmpArray);
   %orig;
 }
 %end

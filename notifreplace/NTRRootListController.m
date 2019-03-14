@@ -63,8 +63,6 @@
 		for(PSSpecifier *specifier in [self specifiers]) {
                 [super setPreferenceValue:[specifier propertyForKey:@"default"] specifier:specifier];
 								prefs = [NSUserDefaults standardUserDefaults];
-								[self reloadSpecifiers];
-								[prefs setObject:[NSNumber numberWithInt:0] forKey:@"inputs"];
       }
     [self reloadSpecifiers];
 	}];

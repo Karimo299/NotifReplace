@@ -39,25 +39,25 @@
 				<string>Enable in Banner</string>
 			</dict>
 			<dict>
-				<key>bundle</key>
-				<string>AppList</string>
-				<key>ALNavigationTitle</key>
-				<string>Replace in Banner:</string>
-				<key>enabled</key>
-				<true/>
-				<key>cell</key>
-				<string>PSLinkCell</string>
-				<key>isController</key>
-				<true/>
-				<key>label</key>
-				<string>Replace in Banner:</string>
-				<key>defaults</key>
-				<string>com.karimo299.notifreplace</string>
-				<key>ALSettingsKeyPrefix</key>
-				<string>selectApps-</string>
-				<key>PostNotification</key>
-				<string>com.karimo299.notifreplace/prefChanged</string>
-			</dict>
+			<key>bundle</key>
+			<string>AppList</string>
+			<key>ALNavigationTitle</key>
+			<string>Change Banner:</string>
+			<key>enabled</key>
+			<true/>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>isController</key>
+			<true/>
+			<key>label</key>
+			<string>Change Banner:</string>
+			<key>ALSettingsPath</key>
+			<string>/var/mobile/Library/Preferences/com.karimo299.notifreplace.plist</string>
+			<key>ALSettingsKeyPrefix</key>
+			<string>selectApps-</string>
+			<key>PostNotification</key>
+			<string>com.karimo299.notifreplace/prefChanged</string>
+		</dict>
 			<dict>
 					<key>cell</key>
 					<string>PSLinkListCell</string>
