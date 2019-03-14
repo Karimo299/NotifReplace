@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>Main</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSSwitchCell</string>
+				<key>PostNotification</key>
+				<string>com.karimo299.notifreplace/prefChanged</string>
+				<key>default</key>
+				<true/>
+				<key>defaults</key>
+				<string>com.karimo299.notifreplace</string>
+				<key>key</key>
+				<string>msgEnabled</string>
+				<key>label</key>
+				<string>Enable in Messages</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSSwitchCell</string>
+				<key>PostNotification</key>
+				<string>com.karimo299.notifreplace/prefChanged</string>
+				<key>default</key>
+				<true/>
+				<key>defaults</key>
+				<string>com.karimo299.notifreplace</string>
+				<key>key</key>
+				<string>bnrEnabled</string>
+				<key>label</key>
+				<string>Enable in Banner</string>
+			</dict>
+			<dict>
+				<key>bundle</key>
+				<string>AppList</string>
+				<key>ALNavigationTitle</key>
+				<string>Replace in Banner:</string>
+				<key>enabled</key>
+				<true/>
+				<key>cell</key>
+				<string>PSLinkCell</string>
+				<key>isController</key>
+				<true/>
+				<key>label</key>
+				<string>Replace in Banner:</string>
+				<key>defaults</key>
+				<string>com.karimo299.notifreplace</string>
+				<key>ALSettingsKeyPrefix</key>
+				<string>selectApps-</string>
+				<key>PostNotification</key>
+				<string>com.karimo299.notifreplace/prefChanged</string>
+			</dict>
+			<dict>
+					<key>cell</key>
+					<string>PSLinkListCell</string>
+					<key>detail</key>
+					<string>ReplaceListController</string>
+					<key>label</key>
+					<string>Replace Text:</string>
+				</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string></string>
+				<key>footerText</key>
+				<string>Respring Required</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSButtonCell</string>
+				<key>label</key>
+				<string>Reset All Settings to Defualt</string>
+				<key>action</key>
+				<string>reset</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSButtonCell</string>
+				<key>label</key>
+				<string>Respring</string>
+				<key>action</key>
+				<string>respring</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>Developer</string>
+			</dict>
+			<dict>
+				<key>big</key>
+				<true/>
+				<key>cellClass</key>
+				<string>HBTwitterCell</string>
+				<key>height</key>
+				<integer>56</integer>
+				<key>label</key>
+				<string>Karimo299</string>
+				<key>user</key>
+				<string>Karimo299</string>
+				<key>action</key>
+				<string>tweet</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSButtonCell</string>
+				<key>icon</key>
+				<string>paypal.png</string>
+				<key>label</key>
+				<string>Support My Work</string>
+				<key>action</key>
+				<string>paypal</string>
+			</dict>
+		</array>
+		<key>title</key>
+		<string>NotifReplace</string>
+	</dict>
+</plist>
