@@ -3,7 +3,9 @@ Name: NotifReplace
 Depends: mobilesubstrate, preferenceloader, ws.hbang.common, applist
 Version: 1.0.0
 Architecture: iphoneos-arm
-Description: Replaces specific text in the notification
+Description: Replaces specific text in the notification, and messages
 Maintainer: Karimo299
 Author: Karimo299
 Section: Tweaks
+Depiction: https://karimo299.github.io/repo/depictions/?p=com.karimo299.notifreplace
+SileoDepiction: https://karimo299.github.io/repo/sileo/notifreplace/
