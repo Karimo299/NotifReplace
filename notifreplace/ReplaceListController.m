@@ -1,15 +1,13 @@
 #import <Preferences/PSSpecifier.h>
 #include "ReplaceListController.h"
 
-// @class PSSpecifier;
-
 
 @implementation ReplaceListController
 int inputs;
 NSUserDefaults *prefs;
 
 - (NSArray *)specifiers {
-	prefs = [NSUserDefaults standardUserDefaults];
+	prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.karimo299.notifreplace"];
 	inputs = [[prefs objectForKey:@"inputs"] intValue];
 	if (!_specifiers) {
 		_specifiers = [[self loadSpecifiersFromPlistName:@"General" target:self] retain];
@@ -32,11 +30,6 @@ NSUserDefaults *prefs;
 	return _specifiers;
 }
 
-// -(void)setPreferenceValue:(id)arg1 specifier:(id)arg2 {
-// 	NSLog(@"%@", arg1);
-// 	NSLog(@"%@", arg2);
-// }
-
 -(void) add {
 inputs ++;
 [prefs setObject:[NSNumber numberWithInt:inputs] forKey:@"inputs"];
@@ -48,8 +41,8 @@ inputs ++;
 	if (inputs > 0) inputs --;
 [[[NSUserDefaults alloc] initWithSuiteName:@"com.karimo299.notifreplace"] removeObjectForKey:[NSString stringWithFormat:@"text%d", inputs]];
 [prefs setObject:[NSNumber numberWithInt:inputs] forKey:@"inputs"];
-[prefs synchronize];
 [self reloadSpecifiers];
+[prefs synchronize];
 }
 
 @end

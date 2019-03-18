@@ -23,7 +23,7 @@ static void loadPrefs() {
 %hook BBBulletin
 -(void)setContent:(BBContent *)arg1 {
   if (bnrEnabled && [[prefs valueForKey:[NSString stringWithFormat:@"selectApps-%@", self.sectionID]] boolValue]) {
-    for (int i = 0; i < [[prefs objectForKey:@"inputs"] intValue]+1; i++) {
+    for (int i = 0; i < [[prefs objectForKey:@"inputs"] intValue]; i++) {
       mystring = [prefs objectForKey:[NSString stringWithFormat:@"text%d", i]];
       if ([[mystring componentsSeparatedByString:@", "] mutableCopy]) tmpArray= [[mystring componentsSeparatedByString:@", "] mutableCopy];
       if ([arg1.message containsString:[tmpArray[0] lowercaseString]])arg1.message = [arg1.message stringByReplacingOccurrencesOfString:[tmpArray[0] lowercaseString] withString:[tmpArray[1] lowercaseString]];

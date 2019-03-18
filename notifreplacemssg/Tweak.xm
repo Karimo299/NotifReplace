@@ -9,14 +9,14 @@ static void loadPrefs() {
   bnrEnabled = [prefs objectForKey:@"bnrEnabled"] ? [[prefs objectForKey:@"bnrEnabled"] boolValue] : YES;
   msgEnabled = [prefs objectForKey:@"msgEnabled"] ? [[prefs objectForKey:@"msgEnabled"] boolValue] : YES;
 }
-
+//
+//
 %hook CKBalloonTextView
 -(void)setAttributedText:(NSAttributedString *)arg1 {
   loadPrefs();
   mutableAttributedString = [arg1 mutableCopy];
-  NSLog(@"%d", msgEnabled);
   if (msgEnabled) {
-    for (int i = 0; i < [[prefs valueForKey:@"inputs"] intValue] + 1; i++) {
+    for (int i = 0; i < [[prefs objectForKey:@"inputs"] intValue]; i++) {
       if ([[[prefs valueForKey:[NSString stringWithFormat:@"text%d", i]] componentsSeparatedByString:@", "] mutableCopy]) tmpArray= [[[prefs valueForKey:[NSString stringWithFormat:@"text%d", i]] componentsSeparatedByString:@", "] mutableCopy];
       if ([mutableAttributedString.mutableString containsString:[tmpArray[0] lowercaseString]]) [mutableAttributedString.mutableString setString:[mutableAttributedString.mutableString stringByReplacingOccurrencesOfString:[tmpArray[0] lowercaseString] withString:[tmpArray[1] lowercaseString]]];
       else if ([mutableAttributedString.mutableString containsString:[tmpArray[0] uppercaseString]]) [mutableAttributedString.mutableString setString:[mutableAttributedString.mutableString stringByReplacingOccurrencesOfString:[tmpArray[0] uppercaseString] withString:[tmpArray[1] uppercaseString]]];
@@ -28,7 +28,6 @@ static void loadPrefs() {
     }
     arg1 = mutableAttributedString;
   }
-  NSLog(@"%@", tmpArray);
   %orig;
 }
 %end
